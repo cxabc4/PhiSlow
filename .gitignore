@@ -1,0 +1,14 @@
+*.apk
+*.apk.idsig
+build/
+local.properties
+*.jks
+*.keystore
+app/src/main/assets/library/
+/PhiSlow-Source*.zip
+/Phislow-Source.zip
+distribution/library-manifest.json
+app/src/main/assets/practice-demo.wav
+.workbuddy/
+.zcode/
+__pycache__/

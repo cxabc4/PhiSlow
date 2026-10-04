@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.phislow.tests">
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34" />
+    <application android:label="Phislow V0 tests" />
+    <instrumentation android:name="com.phislow.tests.PlaybackInstrumentation" android:targetPackage="com.phislow.app" android:label="Phislow playback verification" />
+    <instrumentation android:name="com.phislow.tests.PracticeRegressionInstrumentation" android:targetPackage="com.phislow.app" android:label="Phislow practice regression verification" />
+    <instrumentation android:name="com.phislow.tests.FavoritesInstrumentation" android:targetPackage="com.phislow.app" android:label="Phislow favorites storage verification" />
+    <instrumentation android:name="com.phislow.tests.FavoritesFlowInstrumentation" android:targetPackage="com.phislow.app" android:label="Phislow favorites navigation verification" />
+    <instrumentation android:name="com.phislow.tests.LibraryAssetsInstrumentation" android:targetPackage="com.phislow.app" android:label="Phislow saved library verification" />
+    <instrumentation android:name="com.phislow.tests.ChartImportInstrumentation" android:targetPackage="com.phislow.app" android:label="PhiSlow chart import verification" />
+</manifest>

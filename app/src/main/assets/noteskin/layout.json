@@ -1,0 +1,16 @@
+{
+  "comment": "Alignment spec for the bundled Phislow Clear art. bodyX is the coloured key body inside every 1024-wide canvas; bodyY is the same measured per base type from the artwork (the _mh variants keep the identical body, their gold frame lives in the padding). Values are source pixels.",
+  "bodyX": [176, 848],
+  "bodyY": {
+    "click": [66, 125],
+    "drag": [82, 110],
+    "flick": [88, 165],
+    "hold": [160, 1888]
+  },
+  "holdAtlas": [160, 160],
+  "holdAtlasMH": [160, 160],
+  "hitFx": [6, 8],
+  "hitFxScale": 0.9,
+  "hitFxDuration": 0.54,
+  "hitFxTinted": true
+}

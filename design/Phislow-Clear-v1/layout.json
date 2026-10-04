@@ -1,0 +1,96 @@
+{
+  "canvasWidth": 1024,
+  "bodyColorWidth": 672,
+  "bodyColorX": [
+    176,
+    848
+  ],
+  "anchorX": 512,
+  "holdCaps": [
+    160,
+    160
+  ],
+  "notes": {
+    "click": {
+      "width": 1024,
+      "height": 192,
+      "bodyColorX": [
+        176,
+        848
+      ],
+      "centerY": 96,
+      "source": "click.png"
+    },
+    "drag": {
+      "width": 1024,
+      "height": 192,
+      "bodyColorX": [
+        176,
+        848
+      ],
+      "centerY": 96,
+      "source": "drag.png"
+    },
+    "flick": {
+      "width": 1024,
+      "height": 256,
+      "bodyColorX": [
+        176,
+        848
+      ],
+      "centerY": 128,
+      "source": "flick.png"
+    },
+    "hold": {
+      "width": 1024,
+      "height": 2048,
+      "bodyColorX": [
+        176,
+        848
+      ],
+      "centerY": 1024,
+      "source": "hold_v2.png"
+    },
+    "click_mh": {
+      "width": 1024,
+      "height": 192,
+      "bodyColorX": [
+        176,
+        848
+      ],
+      "centerY": 96,
+      "source": "click_mh.png"
+    },
+    "drag_mh": {
+      "width": 1024,
+      "height": 192,
+      "bodyColorX": [
+        176,
+        848
+      ],
+      "centerY": 96,
+      "source": "drag_mh.png"
+    },
+    "flick_mh": {
+      "width": 1024,
+      "height": 256,
+      "bodyColorX": [
+        176,
+        848
+      ],
+      "centerY": 128,
+      "source": "flick_mh.png"
+    },
+    "hold_mh": {
+      "width": 1024,
+      "height": 2048,
+      "bodyColorX": [
+        176,
+        848
+      ],
+      "centerY": 1024,
+      "source": "hold_mh.png",
+      "revision": "narrower gold outer ring, white inner outline retained"
+    }
+  }
+}

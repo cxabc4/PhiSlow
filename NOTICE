@@ -1,0 +1,76 @@
+PhiSlow — 参考项目与开源许可
+Copyright (C) 2026 PhiSlow contributors
+程序许可：GNU General Public License version 3 only（SPDX: GPL-3.0-only）。
+
+PhiSlow 是独立的 Android 练习应用。下面列出实际参考的项目、数据与工具；
+项目名称和原作者的权利由各自权利人保留，署名不代表官方认可或合作。
+本程序不提供担保；你可依照 GPL v3 运行、修改和再分发程序。
+完整许可见同发行的 LICENSE，应用内也可离线阅读。
+
+1. Phira Pro — Phira-Pro 及其贡献者
+   https://github.com/Phira-Pro/Phira-Pro
+   参考提交：5c28e71955d4ee74fd81f220efdccbdec4d727ed
+   原程序许可：GPL-3.0-only；上游基于 TeamFlos/Phira。
+   参考文件：prpr/src/parse/pgr.rs、prpr/src/core/block.rs、
+   prpr/src/core/block_mask.rs、prpr/src/core/block_touch.rs、
+   prpr/src/judge.rs，以及 docs/block-area/README.md。
+   2026-10-03：将噪域事件、锚点变换、缓动、触摸屏蔽与图层合成规则
+   改写为适配 PhiSlow 的 Java 实现。视觉噪声使用自制程序绘制，
+   没有复制上游从官方 APK 导出的原生 GLSL、噪声 PNG 或触点贴图。
+   视觉效果不是原版材质的逐像素复现；本次尚未实现触摸音乐低通。
+
+2. Phira — TeamFlos 及其贡献者
+   https://github.com/TeamFlos/phira
+   参考提交：ac4795fff2efd4cb2c7ef212bbbf74bdb4c42ae3
+   原程序许可：GPL-3.0-only。
+   参考文件：prpr/src/parse/pgr.rs、prpr/src/core/line.rs、
+   prpr/src/core/note.rs、prpr/src/judge.rs。
+   用途：谱面解析语义、判定线与音符生命周期、长条续按和空间判定。
+   PhiSlow 使用 Android/Java 实现这些行为，不打包 Phira 的 Rust 引擎。
+
+3. Phira Documents — TeamFlos 及其文档贡献者
+   https://github.com/TeamFlos/phira-docs
+   文档许可：Creative Commons Attribution 4.0 International（CC-BY-4.0）。
+   核对提交：a0a46ad9587bd44ae1a5147c2fb1a33713992dd8
+   https://teamflos.github.io/phira-docs/en/respack/index.html
+   https://creativecommons.org/licenses/by/4.0/
+   用途：资源包文件名、长条切片和特效帧排列格式参考。
+   没有把完整文档作为应用资产转载；PhiSlow 的资源说明另行编写。
+
+4. Phiround.zip — 用户提供的参考资源包
+   作者与许可证未核实，不能据此授予其内容的再分发许可。
+   用途：资源格式和按键视觉方向参考。
+   PhiSlow Clear 按键为自制图像，打击特效为自制 SVG；
+   未转载参考包中的图片或音效。设计记录见 design/Phislow-Clear-v1。
+
+5. UnityPy — Rudolf Kolbe / K0lb3 及其贡献者
+   https://github.com/K0lb3/UnityPy
+   本地版本：1.25.3；MIT License。
+   用途：离线读取用户本地 Unity 资源，未打包进 Android 应用。
+
+6. FFmpeg — FFmpeg developers
+   https://ffmpeg.org/
+   https://ffmpeg.org/legal.html
+   本地版本：7.1 essentials_build-www.gyan.dev。
+   本地构建启用 --enable-gpl 和 --enable-version3，适用 GPL v3。
+   用途：离线音频转码，未打包进 Android 应用。
+
+7. Il2CppDumper — Perfare 及其贡献者
+   https://github.com/Perfare/Il2CppDumper
+   MIT License。
+   用途：本地调查原客户端元数据与播放时间模型，未打包工具或原客户端代码。
+
+8. Phigros — Pigeon Games；音乐、谱面与曲绘的各自作者／权利人
+   用途：历史个人练习版本中用户本地谱面数据来源，以及布局与交互参考。
+   Phigros 客户端和这些资源没有因本程序采用 GPL 而变成 GPL 作品。
+   本声明不授予官方歌曲、谱面、曲绘、商标或其他官方素材的再分发权。
+   公开版不包含谱面、音乐、曲绘或官方素材；用户导入素材需按各自授权使用。
+
+对应源码
+https://github.com/cxabc4/PhiSlow 提供公开源代码；同版 PhiSlow-Source-<版本号>.zip
+提供本程序源代码、构建脚本、原创按键资源
+及许可声明。发布 APK 时应一起提供该文件，并保留接收者获取对应源码
+与依 GPL 修改、再分发程序的权利。代码许可不替代音乐、谱面或曲绘授权。
+源码包不包含谱面、音乐、曲绘、私人曲库清单、提取脚本、参考 APK、
+分析工具二进制、签名密钥或用户数据。
+完整 GPL v3 文本在应用内「关于与开源许可」及 LICENSE 中提供。

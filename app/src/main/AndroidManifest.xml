@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.phislow.app" android:versionCode="6" android:versionName="0.5.0">
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34" />
+    <application android:label="PhiSlow" android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme" android:allowBackup="false" android:supportsRtl="true">
+        <activity android:name=".ChartImportActivity" android:exported="false" android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize" />
+        <activity android:name=".AboutActivity" android:exported="false" android:screenOrientation="sensorLandscape" />
+        <activity android:name=".SongSelectActivity" android:exported="true" android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" android:exported="false" android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize" />
+        <activity android:name=".PackManagerActivity" android:exported="false" android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize" />
+        <activity android:name=".SettingsActivity" android:exported="false" android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize" />
+    </application>
+</manifest>

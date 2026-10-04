@@ -1,0 +1,9 @@
+name: "Phislow Clear"
+author: "Phislow UI design"
+description: "Unified-width cyan/gold/rose/mint notes; bold gold simultaneous-note frames; SVG hit effect."
+hitFx: [6, 8]
+holdAtlas: [160, 160]
+holdAtlasMH: [160, 160]
+hitFxScale: 0.9
+hitFxDuration: 0.54
+hitFxTinted: true
