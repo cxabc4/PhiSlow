@@ -6,7 +6,7 @@
 
 ## 导入与练习
 
-支持 Android 8.0 及以上。安装 `PhiSlow.apk` 后，在选曲页点击导入：
+支持 Android 8.0 及以上。安装 `PhiSlow-Public.apk` 后，在选曲页点击导入：
 
 - **ZIP / PEZ 谱面包**：包含谱面 JSON 和配套音乐，可选曲绘；支持 Phira 常用的 `info.yml` 单行元信息字段与文件引用，也可使用 `info.txt`。包内有多个同类文件时，需在元信息中指定文件。
 - **JSON＋音乐**：依次选择谱面 JSON 和配套音频。
@@ -38,7 +38,7 @@
 .\build.ps1 -JavaHome 'C:\path\to\jdk-17' -SdkRoot 'C:\path\to\Android\Sdk'
 ```
 
-默认构建公开版，输出根目录的 `PhiSlow.apk`。只暂存原创按键资源和许可文本，即使本地存在私人曲库，也不会将其装入公开 APK。
+默认构建公开版，输出根目录的 `PhiSlow-Public.apk`。只暂存原创按键资源和许可文本，即使本地存在私人曲库，也不会将其装入公开 APK。
 
 ```powershell
 .\build.ps1 -Variant Public -WithTests
@@ -47,14 +47,16 @@ python tools/package_source.py
 
 测试 APK 位于 `build/PhiSlow-tests.apk`，源码包为 `PhiSlow-Source-<版本号>.zip`（当前为 `PhiSlow-Source-0.5.0.zip`）。打包工具从应用清单读取版本号。源码包采用允许清单，仅包含程序、原创按键源文件、测试源码、构建工具与许可，不包含谱面、音乐、曲绘、私人曲库清单、提取脚本、逆向文档、签名密钥或用户数据。
 
-构建脚本保留 `Full` / `Update` / `Both` 供已有私人曲库的本地使用者显式调用；这些构建所需的私人素材和曲库清单不随公开仓库提供，也不发布相应 APK。
+构建脚本保留三种独立产物：`Public` 生成 `PhiSlow-Public.apk`；`Full` 生成 `PhiSlow-Practice-Full.apk`；`Update` 生成 `PhiSlow-Practice-Update.apk`。`Both` 只生成 Practice 完整包和增量包，不覆盖 Public 包。
+
+Practice 包供已有私人曲库的本地使用者显式构建，完整包先保存曲库，增量包覆盖更新并读取已保存曲库。所需的私人素材和曲库清单不随公开仓库提供，两份 Practice APK 不发布到 GitHub。三个产物保留相同包名 `com.phislow.app` 以兼容覆盖更新。
 
 调试签名保存在 `build/debug.keystore`。覆盖安装必须使用相同密钥；保留该文件可持续构建自己的更新包，其他人重新构建会生成自己的密钥。
 
 ## 验证
 
 ```powershell
-adb install -r .\PhiSlow.apk
+adb install -r .\PhiSlow-Public.apk
 adb install -r .\build\PhiSlow-tests.apk
 adb shell am instrument -w com.phislow.tests/com.phislow.tests.ChartImportInstrumentation
 ```

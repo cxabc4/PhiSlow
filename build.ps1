@@ -227,13 +227,12 @@ if ($Variant -eq 'Public') {
     Copy-Item -LiteralPath (Join-Path $assetsRoot 'noteskin') -Destination $publicAssets -Recurse
     Copy-Item -LiteralPath (Join-Path $assetsRoot 'licenses') -Destination $publicAssets -Recurse
     Build-Apk @appArguments -Name 'app' -AssetsDirectory $publicAssets `
-        -Destination (Join-Path $projectRoot 'PhiSlow.apk')
+        -Destination (Join-Path $projectRoot 'PhiSlow-Public.apk')
 }
 if ($Variant -in @('Full', 'Both')) {
-    $fullApk = Join-Path $projectRoot 'PhiSlow-Full.apk'
+    $fullApk = Join-Path $projectRoot 'PhiSlow-Practice-Full.apk'
     Build-Apk @appArguments -Name 'app' -AssetsDirectory $assetsRoot `
         -AdditionalAssetsDirectory $metadataRoot -Destination $fullApk
-    Copy-Item -LiteralPath $fullApk -Destination (Join-Path $projectRoot 'PhiSlow.apk') -Force
 }
 if ($Variant -in @('Update', 'Both')) {
     $updateAssets = Join-Path $buildRoot 'update-assets'
@@ -245,7 +244,7 @@ if ($Variant -in @('Update', 'Both')) {
     # Keep app/classes.jar available to the test build when only the update is requested.
     $updateName = if ($Variant -eq 'Update') { 'app' } else { 'update' }
     Build-Apk @appArguments -Name $updateName -AssetsDirectory $updateAssets `
-        -Destination (Join-Path $projectRoot 'PhiSlow-Update.apk')
+        -Destination (Join-Path $projectRoot 'PhiSlow-Practice-Update.apk')
 }
 
 if ($WithTests) {
